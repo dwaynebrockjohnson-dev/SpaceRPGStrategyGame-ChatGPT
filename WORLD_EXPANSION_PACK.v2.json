@@ -1,0 +1,330 @@
+{
+  "meta": {
+    "module": "WORLD_EXPANSION_PACK",
+    "version": 1,
+    "created_at": "2025-08-17T03:02:33.774150Z",
+    "notes": [
+      "Keep this file separate; merge selectively into the master ledger when ready.",
+      "Only Paraxis League worlds receive per-planet government types.",
+      "Solar Empire receives a unifying Latin-flavored culture (Solarian).",
+      "Replace PLN-XXXX/PLN-YYYY/PLN-ZZZZ with actual Paraxis League planet IDs from your ledger."
+    ]
+  },
+  "economy": {
+    "currencies": {
+      "FAC-SOLAR-EMPIRE": {
+        "name": "Imperial Solarii",
+        "symbol": "S",
+        "exchange_rate": 1.0
+      },
+      "FAC-PARAXIS-LEAGUE": {
+        "name": "League Ducat",
+        "symbol": "D",
+        "exchange_rate": 0.7
+      },
+      "FAC-SARAPIN-FED": {
+        "name": "Federation Mark",
+        "symbol": "M",
+        "exchange_rate": 0.9
+      },
+      "FAC-SARAX-EMPIRE": {
+        "name": "Sarax Denar",
+        "symbol": "Ð",
+        "exchange_rate": 1.1
+      }
+    },
+    "resources_catalog": [
+      "food",
+      "ore",
+      "fuel",
+      "weapons",
+      "luxuries"
+    ],
+    "market_templates": {
+      "planet_market": {
+        "exports": [],
+        "imports": [],
+        "prices": {},
+        "black_market": {
+          "active": false,
+          "goods": []
+        }
+      }
+    },
+    "simulation": {
+      "inflation_baseline": 0.02,
+      "shock_probability_per_tick": 0.05,
+      "trade_routes": [],
+      "embargoes": []
+    }
+  },
+  "population": {
+    "planetary_stats_template": {
+      "population_total": 0,
+      "urban_percent": 0.0,
+      "growth_rate": 0.0,
+      "cultural_groups": [],
+      "religious_groups": []
+    }
+  },
+  "diplomacy": {
+    "relations_matrix": {
+      "FAC-SOLAR-EMPIRE": {
+        "FAC-PARAXIS-LEAGUE": "hostile",
+        "FAC-SARAPIN-FED": "neutral",
+        "FAC-SARAX-EMPIRE": "hostile"
+      },
+      "FAC-PARAXIS-LEAGUE": {
+        "FAC-SOLAR-EMPIRE": "hostile",
+        "FAC-SARAPIN-FED": "allied",
+        "FAC-SARAX-EMPIRE": "allied"
+      },
+      "FAC-SARAPIN-FED": {
+        "FAC-SOLAR-EMPIRE": "neutral",
+        "FAC-PARAXIS-LEAGUE": "allied",
+        "FAC-SARAX-EMPIRE": "neutral"
+      },
+      "FAC-SARAX-EMPIRE": {
+        "FAC-SOLAR-EMPIRE": "hostile",
+        "FAC-PARAXIS-LEAGUE": "allied",
+        "FAC-SARAPIN-FED": "neutral"
+      }
+    },
+    "treaties": []
+  },
+  "society": {
+    "FAC-SOLAR-EMPIRE": {
+      "culture": {
+        "name": "Solarian",
+        "traits": [
+          "formal",
+          "aristocratic",
+          "disciplined"
+        ],
+        "language": "Lingua Solarii",
+        "religion": "Cultus Solaris",
+        "notes": "Romanesque civic rites; Emperor recognized as Pontifex Maximus; imperial latin naming."
+      }
+    },
+    "FAC-PARAXIS-LEAGUE": {
+      "planetary_governments": {
+        "PLN-XXXX": "republic",
+        "PLN-YYYY": "oligarchy",
+        "PLN-ZZZZ": "merchant-prince city-state"
+      }
+    }
+  },
+  "governance": {
+    "FAC-SOLAR-EMPIRE": {
+      "type": "Imperial Monarchy",
+      "law_and_order": 0.85,
+      "corruption": 0.15
+    },
+    "FAC-PARAXIS-LEAGUE": {
+      "type": "Confederation",
+      "law_and_order": 0.5,
+      "corruption": 0.35
+    },
+    "FAC-SARAPIN-FED": {
+      "type": "Federation Senate",
+      "law_and_order": 0.65,
+      "corruption": 0.25
+    },
+    "FAC-SARAX-EMPIRE": {
+      "type": "Martial Autocracy",
+      "law_and_order": 0.75,
+      "corruption": 0.2
+    }
+  },
+  "templates": {
+    "paraxis_government_types": [
+      "republic",
+      "oligarchy",
+      "merchant-prince city-state",
+      "military junta",
+      "guild council"
+    ],
+    "planet_market_presets": {
+      "industrial": {
+        "exports": [
+          "weapons",
+          "machinery"
+        ],
+        "imports": [
+          "food"
+        ],
+        "prices": {
+          "weapons": 0.9,
+          "food": 1.2
+        }
+      },
+      "agricultural": {
+        "exports": [
+          "food"
+        ],
+        "imports": [
+          "machinery",
+          "luxuries"
+        ],
+        "prices": {
+          "food": 0.85,
+          "luxuries": 1.15
+        }
+      },
+      "frontier": {
+        "exports": [
+          "ore"
+        ],
+        "imports": [
+          "weapons",
+          "luxuries"
+        ],
+        "prices": {
+          "ore": 0.9,
+          "weapons": 1.1
+        }
+      }
+    }
+  },
+  "time": {
+    "calendar": {
+      "name": "Galactic Standard Year",
+      "epoch_start": "0001-01-01T00:00:00Z",
+      "year_offset": 4377,
+      "current_date_real": "2025-08-17T03:07:12Z",
+      "current_date_game": null,
+      "tick_interval_days": 30,
+      "notes": "Store both real and game timestamps on events for validators and immersion."
+    }
+  },
+  "politics": {
+    "succession_rules": {
+      "FAC-SOLAR-EMPIRE": "hereditary_imperium",
+      "FAC-PARAXIS-LEAGUE": "planetary_councils_elect",
+      "FAC-SARAPIN-FED": "senate_vote",
+      "FAC-SARAX-EMPIRE": "military_appointment"
+    },
+    "offices_template": {
+      "office_id": "OFF-XXXX",
+      "title": "Governor of X",
+      "holder": "CHR-XXXX",
+      "faction": "FAC-XXXX",
+      "planet_id": "PLN-XXXX",
+      "start_game_date": "6402-01-01",
+      "end_game_date": null
+    }
+  },
+  "religion": {
+    "FAC-SOLAR-EMPIRE": {
+      "state_religion": "Cultus Solaris",
+      "sects": [
+        {
+          "name": "Ordo Aureus",
+          "stance": "orthodox",
+          "influence": 0.55
+        },
+        {
+          "name": "Heliarch Reformists",
+          "stance": "moderate",
+          "influence": 0.25
+        },
+        {
+          "name": "Sol Invicta Mystica",
+          "stance": "mystic fringe",
+          "influence": 0.1
+        },
+        {
+          "name": "Luminarch Purists",
+          "stance": "reactionary",
+          "influence": 0.1
+        }
+      ],
+      "heresy_threshold": 0.15
+    },
+    "FAC-PARAXIS-LEAGUE": {
+      "pluralism": true,
+      "major_traditions": [
+        "Civic Pragmatism",
+        "Guild Patronage Cults"
+      ],
+      "sects": []
+    },
+    "FAC-SARAPIN-FED": {
+      "state_religion": null,
+      "major_traditions": [
+        "Secular Humanism",
+        "Regional Faiths"
+      ]
+    },
+    "FAC-SARAX-EMPIRE": {
+      "state_religion": "Rite of the Founder",
+      "sects": [
+        {
+          "name": "Imperial Rite",
+          "stance": "orthodox",
+          "influence": 0.7
+        },
+        {
+          "name": "Steel Ascetics",
+          "stance": "austere",
+          "influence": 0.2
+        },
+        {
+          "name": "Iron Cohort",
+          "stance": "militarist cult",
+          "influence": 0.1
+        }
+      ]
+    }
+  },
+  "knowledge": {
+    "chronicle": [],
+    "rumors": [],
+    "information_spread": {
+      "propagation_speed": "1 parsec/week",
+      "distortion_chance": 0.15,
+      "channels": [
+        "merchants",
+        "official dispatches",
+        "smugglers",
+        "clergy"
+      ]
+    }
+  },
+  "culture": {
+    "planetary_drift_rules": {
+      "drift_rate_per_year": 0.01,
+      "assimilation_pressure": {
+        "FAC-SOLAR-EMPIRE": 0.03,
+        "FAC-PARAXIS-LEAGUE": 0.01,
+        "FAC-SARAPIN-FED": 0.015,
+        "FAC-SARAX-EMPIRE": 0.025
+      },
+      "language_shift": {
+        "toward": {
+          "FAC-SOLAR-EMPIRE": "Lingua Solarii"
+        },
+        "away_threshold": 0.4
+      }
+    }
+  },
+  "population_dynamics": {
+    "aging_tick_years": 1.0,
+    "birth_rate_per_1000": 16,
+    "death_rate_per_1000": 8,
+    "migration": {
+      "pull_factors": [
+        "wages",
+        "safety",
+        "religious_freedom",
+        "infrastructure"
+      ],
+      "push_factors": [
+        "war",
+        "famine",
+        "persecution",
+        "disaster"
+      ]
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "meta": {
+    "module": "CONTINUITY_MODULE",
+    "version": 1,
+    "created_at": "2025-08-17T03:04:10.111382Z",
+    "notes": [
+      "This module adds maximum continuity systems to the world simulation.",
+      "Keep separate from core ledger; merge when ready."
+    ]
+  },
+  "time": {
+    "calendar": {
+      "standard": "Galactic Standard Year",
+      "epoch_start": "0001-01-01T00:00:00Z",
+      "current_date": "2025-08-17T03:04:10Z",
+      "tick_interval_days": 30,
+      "local_calendars": {}
+    },
+    "scheduled_events": []
+  },
+  "characters": {
+    "aging_policy": {
+      "enabled": true,
+      "average_lifespan": 75,
+      "variance": 0.15,
+      "ageing_effects": [
+        "traits weaken",
+        "resolve may decline",
+        "risk of illness"
+      ]
+    },
+    "lineages": {
+      "template": {
+        "id": "CHR-XXXX",
+        "family_name": "Gens Solarii",
+        "parents": [],
+        "children": [],
+        "heirs": []
+      }
+    },
+    "reputation_system": {
+      "levels": [
+        "beloved",
+        "trusted",
+        "respected",
+        "neutral",
+        "distrusted",
+        "hated"
+      ],
+      "faction_opinion_range": [
+        -100,
+        100
+      ],
+      "personal_opinion_range": [
+        -100,
+        100
+      ]
+    }
+  },
+  "military": {
+    "unit_experience": {
+      "levels": [
+        "green",
+        "regular",
+        "veteran",
+        "elite"
+      ],
+      "effects": [
+        "morale bonus",
+        "combat effectiveness"
+      ]
+    },
+    "casualty_logs": [],
+    "prisoners_of_war": []
+  },
+  "governance": {
+    "offices": {
+      "template": {
+        "office_id": "OFF-XXXX",
+        "title": "Governor of X",
+        "holder": "CHR-XXXX",
+        "faction": "FAC-XXXX",
+        "start_date": "YYYY-MM-DD",
+        "end_date": null
+      }
+    },
+    "succession_rules": {
+      "FAC-SOLAR-EMPIRE": "hereditary",
+      "FAC-PARAXIS-LEAGUE": "elected_by_planet",
+      "FAC-SARAPIN-FED": "senate_vote",
+      "FAC-SARAX-EMPIRE": "military_junta"
+    }
+  },
+  "knowledge": {
+    "chronicle": [],
+    "rumors": [],
+    "information_spread": {
+      "propagation_speed": "1 parsec/week",
+      "distortion_chance": 0.15,
+      "channels": [
+        "merchants",
+        "official dispatches",
+        "smugglers",
+        "priests"
+      ]
+    }
+  },
+  "economy": {
+    "resource_stockpiles": {
+      "template": {
+        "planet_id": "PLN-XXXX",
+        "food": 0,
+        "ore": 0,
+        "fuel": 0,
+        "weapons": 0,
+        "luxuries": 0
+      }
+    },
+    "infrastructure": {
+      "template": {
+        "planet_id": "PLN-XXXX",
+        "roads": "basic",
+        "ports": "standard",
+        "orbital_facilities": "none",
+        "space_elevators": false
+      }
+    }
+  },
+  "continuity_tools": {
+    "validators": [
+      {
+        "id": "CT-001",
+        "name": "Age & Mortality Check",
+        "rule": "Increment ages each tick; mark characters exceeding lifespan with mortality risk."
+      },
+      {
+        "id": "CT-002",
+        "name": "Event Memory Completeness",
+        "rule": "Ensure each event has who/what/when/where/how recorded; log gaps in continuity.issues."
+      },
+      {
+        "id": "CT-003",
+        "name": "Office Succession Check",
+        "rule": "At tick, if office holder dead/removed, apply faction succession_rules."
+      },
+      {
+        "id": "CT-004",
+        "name": "Rumor vs Canon Divergence",
+        "rule": "If rumor contradicts chronicle, log discrepancy for narrative tension."
+      }
+    ]
+  }
+}
